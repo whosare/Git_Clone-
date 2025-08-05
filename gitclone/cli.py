@@ -1,5 +1,5 @@
 import typer
-from gitclone.commands import init, add
+from gitclone.commands import init, add, commit
 
 app=typer.Typer()
 
@@ -11,9 +11,9 @@ def init_command(repo: str=None):
 def add_command(file_path: str):
     add.run(file_path)
 
-
-if __name__=="__main__":
-    app() 
+@app.command(name="commit")
+def commit_command(mes: str):
+    commit.run(mes)
 
 # app=typer.Typer()
 # @app.command()

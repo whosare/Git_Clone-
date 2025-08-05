@@ -16,7 +16,7 @@ def run(message: str):
         for line in f:
             blob_hash, file_path = line.strip().split(" ", 1)
             entries.append((file_path, blob_hash))
-            print(file_path, blob_hash)
+            print(file_path, blob_hash) 
             
         tree_hash = write_tree(entries)
         print(f"Tree created: {tree_hash}")
